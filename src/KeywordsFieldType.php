@@ -1,4 +1,4 @@
-<?php namespace Streams\Addon\FieldType\Keywords;
+<?php namespace Anomaly\Streams\FieldType\Keywords;
 
 use Streams\Core\Addon\FieldTypeAbstract;
 
