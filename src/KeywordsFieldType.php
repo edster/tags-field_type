@@ -1,16 +1,9 @@
-<?php namespace Anomaly\Streams\FieldType\Keywords;
+<?php namespace Anomaly\Streams\Addon\FieldType\Keywords;
 
-use Streams\Core\Addon\FieldTypeAbstract;
+use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
-class KeywordsFieldType extends FieldTypeAbstract
+class KeywordsFieldType extends FieldTypeAddon
 {
-    /**
-     * The database column type this field type uses.
-     *
-     * @var string
-     */
-    public $columnType = 'string';
-
     /**
      * Field type version
      *
