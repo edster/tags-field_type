@@ -4,6 +4,15 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
 class KeywordsFieldType extends FieldTypeAddon
 {
+    protected $slug = 'keywords';
+
+    /**
+     * The database column type this field type uses.
+     *
+     * @var string
+     */
+    public $columnType = 'string';
+
     /**
      * Field type version
      *
