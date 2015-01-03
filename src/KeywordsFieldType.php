@@ -1,4 +1,4 @@
-<?php namespace Anomaly\Streams\Addon\FieldType\Keywords;
+<?php namespace Anomaly\KeywordsFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 
