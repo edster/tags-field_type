@@ -1,5 +1,5 @@
 {
-    "name": "anomaly/keywords-field-type",
+    "name": "anomaly/keywords-field_type",
     "type": "streams-addon",
     "description": "Keywords field type.",
     "authors": [
