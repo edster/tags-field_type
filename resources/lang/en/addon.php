@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'Keywords',
+    'name'        => 'Keywords',
+    'description' => 'A keywords field type.'
 ];
