@@ -1,7 +1,7 @@
 {
-    "name": "anomaly/keywords-field_type",
+    "name": "anomaly/tags-field_type",
     "type": "streams-addon",
-    "description": "Keywords field type.",
+    "description": "tags field type.",
     "authors": [
         {
             "name": "AnomalyLabs",
