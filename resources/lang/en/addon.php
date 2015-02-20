@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name'        => 'Keywords',
-    'description' => 'A keywords field type.'
+    'name'        => 'Tags',
+    'description' => 'A field type for managing tags input.'
 ];

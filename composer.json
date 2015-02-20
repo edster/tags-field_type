@@ -1,16 +1,30 @@
 {
     "name": "anomaly/tags-field_type",
     "type": "streams-addon",
-    "description": "tags field type.",
+    "description": "A field type for managing tags input.",
+    "keywords": [
+        "streams-addon",
+        "tags",
+        "pyrocms",
+        "laravel"
+    ],
+    "homepage": "http://anomaly.is/",
+    "version": "1.0.0-alpha",
+    "license": "MIT",
     "authors": [
         {
-            "name": "AnomalyLabs",
-            "email": "hello@anomaly.is"
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
         }
     ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
     "autoload": {
         "psr-4": {
-            "Anomaly\\KeywordsFieldType\\": "src/"
+            "Anomaly\\TagsFieldType\\": "src/"
         }
     },
     "extra": {

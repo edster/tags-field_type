@@ -1,0 +1,16 @@
+{{ asset_add("styles.css", "anomaly.field_type.tags::css/bootstrap-tagsinput.css") }}
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/bootstrap-tagsinput.min.js") }}
+
+<select
+        name="{{ field_type.getInputName() }}[]"
+        placeholder="{{ field_type.config.placeholder }}"
+        data-role="tagsinput"
+        class="form-control"
+        multiple
+        >
+
+    {% for tag in field_type.value %}
+        <option value="{{ tag }}">{{ tag }}</option>
+    {% endfor %}
+
+</select>
