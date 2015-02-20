@@ -1,19 +1,7 @@
-# Textarea Field Type
+# Tags Field Type
 
-*anomaly.field_type.textarea*
+*anomaly.field_type.tags*
 
-#### A simple textarea field type.
+#### A field type for managing tags input.
 
-The textarea field type provides a basic HTML textarea with configurable height.
-
-## Configuration
-
-- `rows` - any integer
-
-Rows determine the height of the textarea.
-
-#### Example
-
-	config => [
-		'rows' => '10'
-	]
+The tags field type creates a tagged value input.
