@@ -32,6 +32,10 @@ class TagsFieldTypeModifier extends FieldTypeModifier
      */
     public function restore($value)
     {
+        if (!$value) {
+            return [];
+        }
+
         return unserialize($value);
     }
 }
