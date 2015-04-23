@@ -4,3 +4,5 @@
         name="{{ field_type.input_name }}[]"
         value="{{ field_type.value|join(', ') }}"
         placeholder="{{ trans(field_type.config.placeholder) }}">
+
+<small class="text-muted">{{ trans('anomaly.field_type.tags::input.help') }}</small>
