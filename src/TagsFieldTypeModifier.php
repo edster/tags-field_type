@@ -21,7 +21,7 @@ class TagsFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
-        return serialize((array)$value);
+        return serialize(array_filter((array)$value));
     }
 
     /**
