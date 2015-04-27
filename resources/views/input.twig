@@ -1,6 +1,7 @@
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
+
 <input
-        class="form-control"
-        data-role="tagsinput"
+        class="form-control tags"
         name="{{ field_type.input_name }}[]"
         value="{{ field_type.value|join(', ') }}"
         placeholder="{{ trans(field_type.config.placeholder) }}">
