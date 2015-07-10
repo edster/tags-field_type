@@ -1,9 +1,18 @@
+{{ asset_add("styles.css", "anomaly.field_type.tags::less/tagsinput.less") }}
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/bootstrap-tagsinput.min.js") }}
 {{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
 
-<input
-        class="form-control tags"
+<select multiple
+        class="form-control"
         name="{{ field_type.input_name }}[]"
-        value="{{ field_type.value|join(',') }}"
-        placeholder="{{ trans(field_type.config.placeholder) }}">
+        data-placeholder="{{ trans(field_type.config.placeholder) }}"
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+    {% for value in field_type.value %}
+        <option value="{{ value }}">{{ value }}</option>
+    {% endfor %}
+</select>
 
-<small class="text-muted">{{ trans('anomaly.field_type.tags::input.help') }}</small>
+<small class="text-muted">
+    {{ trans('anomaly.field_type.tags::input.help') }}
+</small>

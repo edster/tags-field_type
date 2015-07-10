@@ -13,4 +13,14 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
 class TagsFieldTypePresenter extends FieldTypePresenter
 {
 
+    /**
+     * Return a string of values.
+     *
+     * @param string $glue
+     * @return string
+     */
+    public function string($glue = ',')
+    {
+        return implode($glue, $this->object->getValue());
+    }
 }

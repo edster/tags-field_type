@@ -21,11 +21,7 @@ class TagsFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
-        if (!$this->needsModifying($value)) {
-            return $value;
-        }
-
-        return serialize($value);
+        return serialize((array)$value);
     }
 
     /**
@@ -36,34 +32,14 @@ class TagsFieldTypeModifier extends FieldTypeModifier
      */
     public function restore($value)
     {
-        if (!$this->needsRestoring($value)) {
+        if (!$value) {
+            return [];
+        }
+
+        if (is_array($value)) {
             return $value;
         }
 
-        return unserialize($value);
-    }
-
-    /**
-     * Return whether the value
-     * needs to be modified.
-     *
-     * @param $value
-     * @return bool
-     */
-    protected function needsModifying($value)
-    {
-        return $value && is_array($value);
-    }
-
-    /**
-     * Return whether the value
-     * needs to be resotred.
-     *
-     * @param $value
-     * @return bool
-     */
-    protected function needsRestoring($value)
-    {
-        return $value && is_string($value);
+        return (array)unserialize($value);
     }
 }

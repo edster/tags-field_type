@@ -27,4 +27,53 @@ class TagsFieldType extends FieldType
      */
     protected $inputView = 'anomaly.field_type.tags::input';
 
+    /**
+     * The filter view.
+     *
+     * @var string
+     */
+    protected $filterView = 'anomaly.field_type.tags::filter';
+
+    /**
+     * The field type rules.
+     *
+     * @var array
+     */
+    protected $rules = [
+        'array'
+    ];
+
+    /**
+     * Get the rules.
+     *
+     * @return array
+     */
+    public function getRules()
+    {
+        $rules = parent::getRules();
+
+        if ($min = array_get($this->getConfig(), 'min')) {
+            $rules[] = 'min:' . $min;
+        }
+
+        if ($max = array_get($this->getConfig(), 'max')) {
+            $rules[] = 'max:' . $max;
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Return the required flag.
+     *
+     * @return bool
+     */
+    public function isRequired()
+    {
+        if ((!$required = parent::isRequired()) && array_get($this->getConfig(), 'min')) {
+            return true;
+        }
+
+        return $required;
+    }
 }
