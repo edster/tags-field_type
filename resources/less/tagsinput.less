@@ -12,9 +12,9 @@
     font-size: 0;
 
     .tag {
+        color: #ffffff;
         border-radius: 3px;
-        background-color: mix(#ffffff, #2c2c2c, 90%);
-        color: mix(#2c2c2c, #ffffff, 65%);
+        background-color: #bdc3c7;
         font-size: floor((15px * 0.886)); // ~13px
         cursor: pointer;
         display: inline-block;
@@ -35,7 +35,7 @@
             right: 0;
             text-align: right;
             text-decoration: none;
-            top: 0;
+            top: 1px;
             width: 100%;
             bottom: 0;
             padding: 0 10px 0 0;
@@ -56,8 +56,8 @@
         }
 
         &:hover {
-            background-color: mix(#2c2c2c, black, 85%);
             color: #ffffff;
+            background-color: darken(#bdc3c7, 10%);
             padding-right: 28px;
             padding-left: 14px;
 
