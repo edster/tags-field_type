@@ -5,7 +5,7 @@
 <select multiple
         class="form-control"
         name="{{ field_type.input_name }}[]"
-        data-placeholder="{{ trans(field_type.config.placeholder) }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
         {{ field_type.disabled ? 'disabled' }}
         {{ field_type.readonly ? 'readonly' }}>
     {% for value in field_type.value %}
