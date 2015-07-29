@@ -9,7 +9,11 @@ protected $fields = [
         'config' => [
             'min' => 1,
             'max' => 10,
-            'default_value' => 'Tag 1, Tag 2, Tag 3'
+            'default_value' => [
+                'Tag 1',
+                'Tag 2',
+                'Tag 3'
+            ]
         ]
     ]
 ];
@@ -17,12 +21,12 @@ protected $fields = [
 
 ### `min`
 
-Minimum number of tags required.
+The minimum number of allowed tags. By default no minimum is enforced.
 
 ### `max`
 
-Maximum number of tags allowed.
+The maximum number of allowed tags. By default no maximum is enforced.
 
 ### `default_value`
 
-The default value of the tags. This is a comma separated value.
+The default tags. Any valid array of tags can be used. By default there is no default value.
