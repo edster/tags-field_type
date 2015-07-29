@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'name'        => 'Tags',
+    'title'       => 'Tags',
+    'name'        => 'Tags Field Type',
     'description' => 'A tags input field type.'
 ];
