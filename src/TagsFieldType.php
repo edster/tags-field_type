@@ -64,6 +64,17 @@ class TagsFieldType extends FieldType
     }
 
     /**
+     * Get the validation value.
+     *
+     * @param null $default
+     * @return array
+     */
+    public function getValidationValue($default = null)
+    {
+        return explode(',', parent::getValidationValue($default));
+    }
+
+    /**
      * Return the required flag.
      *
      * @return bool

@@ -21,6 +21,10 @@ class TagsFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
+        if (is_string($value)) {
+            $value = explode(',', $value);
+        }
+
         return serialize((array)$value);
     }
 
