@@ -64,14 +64,14 @@ class TagsFieldType extends FieldType
     }
 
     /**
-     * Get the validation value.
+     * Get the post value.
      *
      * @param null $default
      * @return array
      */
-    public function getValidationValue($default = null)
+    public function getPostValue($default = null)
     {
-        return explode(',', parent::getValidationValue($default));
+        return explode(',', parent::getPostValue($default));
     }
 
     /**
