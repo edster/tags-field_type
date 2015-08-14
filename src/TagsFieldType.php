@@ -64,14 +64,35 @@ class TagsFieldType extends FieldType
     }
 
     /**
-     * Get the post value.
+     * Get the validation value.
+     *
+     * Because the input does not provide
+     * an array but we're expecting one, this
+     * helps us out in standardizing the input
+     * before modification and storage.
      *
      * @param null $default
      * @return array
      */
-    public function getPostValue($default = null)
+    public function getValidationValue($default = null)
     {
-        return explode(',', parent::getPostValue($default));
+        return $this->getInputValue();
+    }
+
+    /**
+     * Get the input value.
+     *
+     * Because the input does not provide
+     * an array but we're expecting one, this
+     * helps us out in standardizing the input
+     * before modification and storage.
+     *
+     * @param null $default
+     * @return array
+     */
+    public function getInputValue($default = null)
+    {
+        return explode(',', parent::getValidationValue($default));
     }
 
     /**
