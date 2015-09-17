@@ -25,7 +25,7 @@ class TagsFieldTypeModifier extends FieldTypeModifier
             $value = explode(',', $value);
         }
 
-        return serialize((array)$value);
+        return serialize(array_filter((array)$value));
     }
 
     /**
@@ -41,9 +41,9 @@ class TagsFieldTypeModifier extends FieldTypeModifier
         }
 
         if (is_array($value)) {
-            return $value;
+            return array_filter($value);
         }
 
-        return (array)unserialize($value);
+        return array_filter((array)unserialize($value));
     }
 }
