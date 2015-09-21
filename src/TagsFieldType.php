@@ -44,6 +44,15 @@ class TagsFieldType extends FieldType
     ];
 
     /**
+     * The field type config.
+     *
+     * @var array
+     */
+    protected $config = [
+        'allow_creating_tags' => true
+    ];
+
+    /**
      * Get the rules.
      *
      * @return array
