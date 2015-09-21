@@ -3,18 +3,24 @@ $(function () {
     // Initialize tag inputs.
     $('.tags-field-type input').each(function () {
 
-        var source = $(this).data('source');
-        var options = $(this).data('options').split(',');
+        var config = {};
 
-        $(this).tagsinput({
-            typeahead: {
+        var source = $(this).data('source');
+        var options = $(this).data('options');
+
+        if (source || options) {
+
+            config.typeahead = {
                 minLength: 0,
                 displayText: function (item) {
                     return item;
                 },
-                source: options ? options : source
-            },
-            freeInput: $(this).data('allow_creating_tags')
-        });
+                source: options ? options.split(',') : source
+            };
+
+            config.freeInput = $(this).data('allow_creating_tags')
+        }
+
+        $(this).tagsinput(config);
     });
 });
