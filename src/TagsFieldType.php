@@ -1,6 +1,7 @@
 <?php namespace Anomaly\TagsFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
+use Anomaly\TagsFieldType\Command\BuildOptions;
 
 /**
  * Class TagsFieldType
@@ -49,8 +50,16 @@ class TagsFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'allow_creating_tags' => true
+        'allow_creating_tags' => true,
+        'handler'             => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle'
     ];
+
+    /**
+     * The checkboxes options.
+     *
+     * @var null
+     */
+    protected $options = null;
 
     /**
      * Get the rules.
@@ -70,6 +79,33 @@ class TagsFieldType extends FieldType
         }
 
         return $rules;
+    }
+
+    /**
+     * Get the dropdown options.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        if ($this->options === null) {
+            $this->dispatch(new BuildOptions($this));
+        }
+
+        return $this->options;
+    }
+
+    /**
+     * Set the options.
+     *
+     * @param array $options
+     * @return $this
+     */
+    public function setOptions(array $options)
+    {
+        $this->options = $options;
+
+        return $this;
     }
 
     /**
