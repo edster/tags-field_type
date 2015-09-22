@@ -33,10 +33,17 @@ class FilterValidator
         }
 
         foreach ($value as $tag) {
+
+            $passes = true;
+
             foreach ($filters as $filter) {
                 if (!$this->passes($tag, $filter)) {
-                    return false;
+                    $passes = false;
                 }
+            }
+
+            if (!$passes) {
+                return false;
             }
         }
 
