@@ -41,7 +41,21 @@ class TagsFieldType extends FieldType
      * @var array
      */
     protected $rules = [
-        'array'
+        'array',
+        'filter_tags'
+    ];
+
+    /**
+     * Custom validators.
+     * i.e. 'rule' => ['message', 'handler']
+     *
+     * @var array
+     */
+    protected $validators = [
+        'filter_tags' => [
+            'message' => 'anomaly.field_type.tags::message.invalid_tags',
+            'handler' => 'Anomaly\TagsFieldType\Validation\FilterValidator'
+        ]
     ];
 
     /**

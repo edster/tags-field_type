@@ -13,6 +13,16 @@ return [
             'min' => 1
         ]
     ],
+    'filter'              => [
+        'type'   => 'anomaly.field_type.tags',
+        'config' => [
+            'options' => [
+                'FILTER_VALIDATE_EMAIL',
+                'FILTER_VALIDATE_IP',
+                'FILTER_VALIDATE_URL'
+            ]
+        ]
+    ],
     'allow_creating_tags' => [
         'type'   => 'anomaly.field_type.boolean',
         'config' => [

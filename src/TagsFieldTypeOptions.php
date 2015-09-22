@@ -23,7 +23,7 @@ class TagsFieldTypeOptions
      */
     public function handle(TagsFieldType $fieldType)
     {
-        $options = array_get($fieldType->getConfig(), 'options', []);
+        $options = (array)array_get($fieldType->getConfig(), 'options', []);
 
         if (is_string($options)) {
             $options = $this->dispatch(new ParseOptions($options));

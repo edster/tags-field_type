@@ -9,6 +9,10 @@ return [
         'label'        => 'Maximum Values',
         'instructions' => 'Enter the maximum number of allowed values if any.'
     ],
+    'filter'              => [
+        'label'        => 'Filter',
+        'instructions' => 'Specify any filters to apply to the tags. You may also enter string matching patterns like <strong>https://*.com</strong>.'
+    ],
     'options'             => [
         'label'        => 'Options',
         'instructions' => 'Enter options below in a <strong>Value</strong> only format. Enter each option on a new line.',
