@@ -151,7 +151,7 @@ class TagsFieldType extends FieldType
      */
     public function getInputValue($default = null)
     {
-        return explode(',', parent::getValidationValue($default));
+        return array_filter(explode(',', parent::getValidationValue($default)));
     }
 
     /**

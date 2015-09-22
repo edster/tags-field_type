@@ -1,7 +1,6 @@
 <?php namespace Anomaly\TagsFieldType\Validation;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
-use Illuminate\Validation\Validator;
 
 /**
  * Class FilterValidator
@@ -15,20 +14,20 @@ class FilterValidator
 {
 
     /**
+     * Handle the validation.
+     *
      * @param FormBuilder $builder
-     * @param Validator   $validator
-     * @param             $parameters
      * @param             $attribute
      * @param             $value
      * @return bool
      */
-    public function handle(FormBuilder $builder, Validator $validator, $parameters, $attribute, $value)
+    public function handle(FormBuilder $builder, $attribute, $value)
     {
         $field = $builder->getFormField($attribute);
 
         $filters = array_get($field->getConfig(), 'filter', []);
 
-        if (!$filters) {
+        if (!$filters || !$value) {
             return true;
         }
 
