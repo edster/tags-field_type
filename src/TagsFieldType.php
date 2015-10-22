@@ -29,13 +29,6 @@ class TagsFieldType extends FieldType
     protected $inputView = 'anomaly.field_type.tags::input';
 
     /**
-     * The filter view.
-     *
-     * @var string
-     */
-    protected $filterView = 'anomaly.field_type.tags::filter';
-
-    /**
      * The field type rules.
      *
      * @var array
