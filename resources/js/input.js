@@ -1,7 +1,7 @@
 $(function () {
 
     // Initialize tag inputs.
-    $('.tags-field-type input').each(function () {
+    $('.tags-field_type input').each(function () {
 
         var config = {};
 
