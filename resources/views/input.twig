@@ -5,11 +5,12 @@
 
 <input
         class="form-control"
+        data-provides="tags"
         name="{{ field_type.input_name }}"
         value="{{ field_type.value|join(',') }}"
         placeholder="{{ trans(field_type.placeholder) }}"
         data-options="{{ field_type.options|join(',') }}"
-        data-allow_creating_tags="{{ field_type.config.allow_creating_tags }}"
+        data-free_input="{{ field_type.config.free_input }}"
         {{ field_type.disabled ? 'disabled' }}
         {{ field_type.readonly ? 'readonly' }}>
 

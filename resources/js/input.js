@@ -1,7 +1,7 @@
 $(function () {
 
     // Initialize tag inputs.
-    $('.tags-field_type input').each(function () {
+    $('[data-provides="tags"]').each(function () {
 
         var config = {};
 
@@ -18,7 +18,7 @@ $(function () {
                 source: options ? options.split(',') : source
             };
 
-            config.freeInput = $(this).data('allow_creating_tags')
+            config.freeInput = $(this).data('free_input')
         }
 
         $(this).tagsinput(config);
