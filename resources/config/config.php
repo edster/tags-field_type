@@ -16,6 +16,9 @@ return [
     'options'       => [
         'type' => 'anomaly.field_type.textarea'
     ],
+    'source'        => [
+        'type' => 'anomaly.field_type.url'
+    ],
     'free_input'    => [
         'type'   => 'anomaly.field_type.boolean',
         'config' => [
@@ -33,9 +36,6 @@ return [
             ]
         ]
     ],
-    /*'source'        => [
-        'type' => 'anomaly.field_type.url'
-    ],*/
     'default_value' => [
         'type' => 'anomaly.field_type.tags'
     ]
