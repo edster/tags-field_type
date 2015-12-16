@@ -23,7 +23,7 @@ class FilterValidator
      */
     public function handle(FormBuilder $builder, $attribute, $value)
     {
-        $field = $builder->getFormField($attribute);
+        $field = $builder->getFormFieldFromAttribute($attribute);
 
         $filters = array_get($field->getConfig(), 'filter', []);
 
