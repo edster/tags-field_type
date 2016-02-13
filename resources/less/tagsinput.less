@@ -4,17 +4,17 @@
 
 .bootstrap-tagsinput {
     background-color: #ffffff;
-    border: 2px solid #bdc3c7;
-    border-radius: 5px;
+    border: 1px solid @input-border-color;
+    border-radius: @input-border-radius;
     margin-bottom: 0;
-    padding: 5px 1px 4px 8px;
+    padding: @input-padding-y @input-padding-x;
     text-align: left;
     font-size: 0;
 
     .tag {
         color: #ffffff;
         border-radius: 3px;
-        background-color: #bdc3c7;
+        background-color: @gray-light;
         font-size: floor((15px * 0.886)); // ~13px
         cursor: pointer;
         display: inline-block;
@@ -55,7 +55,7 @@
 
         &:hover {
             color: #ffffff;
-            background-color: darken(#bdc3c7, 10%);
+            background-color: darken(@gray-light, 10%);
             padding-right: 28px;
             padding-left: 14px;
 
@@ -106,15 +106,15 @@
     margin-bottom: 18px;
 
     .bootstrap-tagsinput {
-        border-color: @secondary;
+        border-color: @brand-primary;
         margin-bottom: 0;
     }
     .tag {
-        background-color: @secondary;
+        background-color: @brand-primary;
         color: #ffffff;
 
         &:hover {
-            background-color: mix(@secondary, black, 85%);
+            background-color: mix(@brand-primary, black, 85%);
             color: #ffffff;
         }
     }
