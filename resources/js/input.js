@@ -1,7 +1,7 @@
 $(function () {
 
     // Initialize tag inputs.
-    $('[data-provides="tags"]').each(function () {
+    $('input[data-provides="anomaly.field_type.tags"]').each(function () {
 
         var config = {};
 
