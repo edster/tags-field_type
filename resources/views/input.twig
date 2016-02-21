@@ -12,8 +12,7 @@
         data-free_input="{{ field_type.config.free_input }}"
         {{ html_attributes(field_type.attributes) }}
         {{ field_type.disabled ? 'disabled' }}
-        {{ field_type.readonly ? 'readonly' }}
-        {{ field_type.required ? 'required' }}>
+        {{ field_type.readonly ? 'readonly' }}>
 
 <small class="text-muted">
     {{ trans('anomaly.field_type.tags::input.help') }}
