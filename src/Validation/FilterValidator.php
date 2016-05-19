@@ -25,7 +25,7 @@ class FilterValidator
     {
         $field = $builder->getFormFieldFromAttribute($attribute);
 
-        $filters = array_get($field->getConfig(), 'filter', []);
+        $filters = (array)array_get($field->getConfig(), 'filter', []);
 
         if (!$filters || !$value) {
             return true;
