@@ -57,8 +57,7 @@ class TagsFieldType extends FieldType
      * @var array
      */
     protected $handlers = [
-        'states'    => 'Anomaly\TagsFieldType\Handler\States',
-        'countries' => 'Anomaly\TagsFieldType\Handler\Countries',
+        'countries' => 'Anomaly\TagsFieldType\Handler\Countries'
     ];
 
     /**
@@ -67,12 +66,12 @@ class TagsFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'free_input' => true,
-        'handler'    => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle'
+        'allow_creating_tags' => true,
+        'handler'             => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle'
     ];
 
     /**
-     * The input options.
+     * The checkboxes options.
      *
      * @var null
      */
@@ -135,10 +134,6 @@ class TagsFieldType extends FieldType
         return $this->handlers;
     }
 
-    /**
-     * @param $handlers
-     * @return $this
-     */
     public function setHandlers($handlers)
     {
         $this->handlers = $handlers;

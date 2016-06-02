@@ -15,8 +15,12 @@ return [
     ],
     'options'       => [
         'label'        => 'Available Options',
-        'instructions' => 'Enter options below in a <strong>key: Value</strong> or <strong>Value</strong> only format. Enter each option on a new line.',
-        'placeholder'  => "foo\n\rbar\n\rbaz"
+        'instructions' => 'Enter available options below in a <strong>Value</strong> only format. Enter each option on a new line.',
+        'placeholder'  => "foo\nbar\nbaz"
+    ],
+    'source'        => [
+        'label'        => 'Source',
+        'instructions' => 'Specify an options source URL.'
     ],
     'free_input'    => [
         'label'        => 'Free Input',
