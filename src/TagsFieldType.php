@@ -52,6 +52,15 @@ class TagsFieldType extends FieldType
     ];
 
     /**
+     * The option handlers.
+     *
+     * @var array
+     */
+    protected $handlers = [
+        'countries' => 'Anomaly\TagsFieldType\Handler\Countries'
+    ];
+
+    /**
      * The field type config.
      *
      * @var array
@@ -116,6 +125,23 @@ class TagsFieldType extends FieldType
     }
 
     /**
+     * Get the handlers.
+     *
+     * @return array
+     */
+    public function getHandlers()
+    {
+        return $this->handlers;
+    }
+
+    public function setHandlers($handlers)
+    {
+        $this->handlers = $handlers;
+
+        return $this;
+    }
+
+    /**
      * Get the validation value.
      *
      * Because the input does not provide
@@ -144,7 +170,7 @@ class TagsFieldType extends FieldType
      */
     public function getInputValue($default = null)
     {
-        return array_filter(explode(',', parent::getValidationValue($default)));
+        return array_filter(parent::getValidationValue($default));
     }
 
     /**
