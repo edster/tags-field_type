@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\TagsFieldType
  */
 class TagsFieldTypeOptions
 {

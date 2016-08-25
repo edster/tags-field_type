@@ -8,7 +8,6 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\TagsFieldType
  */
 class TagsFieldTypePresenter extends FieldTypePresenter
 {
@@ -24,7 +23,7 @@ class TagsFieldTypePresenter extends FieldTypePresenter
     /**
      * Return the tags wrapped in labels.
      *
-     * @param string $class
+     * @param  string $class
      * @return string
      */
     public function labels($class = 'label-default')

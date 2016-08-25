@@ -9,7 +9,6 @@ use Anomaly\TagsFieldType\Command\BuildOptions;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\Streams\Addon\FieldType\Tags
  */
 class TagsFieldType extends FieldType
 {
@@ -35,7 +34,7 @@ class TagsFieldType extends FieldType
      */
     protected $rules = [
         'array',
-        'filter_tags'
+        'filter_tags',
     ];
 
     /**
@@ -47,8 +46,8 @@ class TagsFieldType extends FieldType
     protected $validators = [
         'filter_tags' => [
             'message' => 'anomaly.field_type.tags::message.invalid_tags',
-            'handler' => 'Anomaly\TagsFieldType\Validation\FilterValidator'
-        ]
+            'handler' => 'Anomaly\TagsFieldType\Validation\FilterValidator',
+        ],
     ];
 
     /**
@@ -58,7 +57,7 @@ class TagsFieldType extends FieldType
      */
     protected $config = [
         'allow_creating_tags' => true,
-        'handler'             => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle'
+        'handler'             => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle',
     ];
 
     /**
@@ -105,7 +104,7 @@ class TagsFieldType extends FieldType
     /**
      * Set the options.
      *
-     * @param array $options
+     * @param  array $options
      * @return $this
      */
     public function setOptions(array $options)
@@ -123,7 +122,7 @@ class TagsFieldType extends FieldType
      * helps us out in standardizing the input
      * before modification and storage.
      *
-     * @param null $default
+     * @param  null  $default
      * @return array
      */
     public function getValidationValue($default = null)
@@ -139,7 +138,7 @@ class TagsFieldType extends FieldType
      * helps us out in standardizing the input
      * before modification and storage.
      *
-     * @param null $default
+     * @param  null  $default
      * @return array
      */
     public function getInputValue($default = null)

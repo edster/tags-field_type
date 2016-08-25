@@ -1,6 +1,6 @@
 <?php namespace Anomaly\TagsFieldType\Command;
 
-use Illuminate\Contracts\Bus\SelfHandling;
+
 
 /**
  * Class ParseOptions
@@ -8,9 +8,8 @@ use Illuminate\Contracts\Bus\SelfHandling;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\TagsFieldType\Command
  */
-class ParseOptions implements SelfHandling
+class ParseOptions
 {
 
     /**

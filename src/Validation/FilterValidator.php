@@ -8,7 +8,6 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\TagsFieldType\Validation
  */
 class FilterValidator
 {
@@ -16,9 +15,9 @@ class FilterValidator
     /**
      * Handle the validation.
      *
-     * @param FormBuilder $builder
-     * @param             $attribute
-     * @param             $value
+     * @param  FormBuilder $builder
+     * @param              $attribute
+     * @param              $value
      * @return bool
      */
     public function handle(FormBuilder $builder, $attribute, $value)
