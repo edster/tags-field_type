@@ -29,14 +29,11 @@ class TagsFieldTypePresenter extends FieldTypePresenter
      */
     public function labels($class = 'label-default')
     {
-        return implode(
-            ' ',
-            array_map(
-                function ($tag) use ($class) {
-                    return '<span class="label ' . $class . '">' . $tag . '</span>';
-                },
-                $this->object->getValue()
-            )
+        array_map(
+            function ($tag) use ($class) {
+                return '<span class="label ' . $class . '">' . $tag . '</span>';
+            },
+            $this->object->getValue()
         );
     }
 
