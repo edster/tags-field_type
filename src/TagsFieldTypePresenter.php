@@ -2,13 +2,6 @@
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
 
-/**
- * Class TagsFieldTypePresenter
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class TagsFieldTypePresenter extends FieldTypePresenter
 {
 
