@@ -39,4 +39,18 @@ class TagsFieldTypePresenter extends FieldTypePresenter
             )
         );
     }
+
+    /**
+     * Return the string form of the value.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        if (!$value = $this->object->getValue()) {
+            return '';
+        }
+
+        return json_encode($value);
+    }
 }
