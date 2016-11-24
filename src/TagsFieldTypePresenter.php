@@ -2,6 +2,13 @@
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
 
+/**
+ * Class TagsFieldTypePresenter
+ *
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
+ */
 class TagsFieldTypePresenter extends FieldTypePresenter
 {
 
@@ -19,11 +26,11 @@ class TagsFieldTypePresenter extends FieldTypePresenter
      * @param  string $class
      * @return string
      */
-    public function labels($class = 'label-default')
+    public function labels($class = 'tag-default')
     {
         return array_map(
             function ($tag) use ($class) {
-                return '<span class="label ' . $class . '">' . $tag . '</span>';
+                return '<span class="tag ' . $class . '">' . $tag . '</span>';
             },
             $this->object->getValue()
         );
