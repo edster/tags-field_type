@@ -1,7 +1,9 @@
 $(document).on('ajaxComplete ready', function () {
 
     // Initialize tag inputs.
-    $('input[data-provides="anomaly.field_type.tags"]').each(function () {
+    $('input[data-provides="anomaly.field_type.tags"]:not([data-initialized])').each(function () {
+
+        $(this).attr('data-initialized', '');
 
         var config = {};
 
