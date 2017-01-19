@@ -5,8 +5,16 @@ use Anomaly\TagsFieldType\Command\ParseOptions;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Collection;
 
+/**
+ * Class TagsFieldTypeOptions
+ *
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
+ */
 class TagsFieldTypeOptions
 {
+
     use DispatchesJobs;
 
     /**
@@ -16,7 +24,7 @@ class TagsFieldTypeOptions
      */
     public function handle(TagsFieldType $fieldType)
     {
-        $options = (array)array_get($fieldType->getConfig(), 'options', []);
+        $options = array_get($fieldType->getConfig(), 'options', []);
 
         if (is_string($options)) {
             $options = $this->dispatch(new ParseOptions($options));
