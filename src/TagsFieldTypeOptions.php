@@ -48,6 +48,6 @@ class TagsFieldTypeOptions
             $options = $options->all();
         }
 
-        $fieldType->setOptions($options);
+        $fieldType->setOptions((array)$options);
     }
 }
