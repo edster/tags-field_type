@@ -56,8 +56,8 @@ class TagsFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'allow_creating_tags' => true,
-        'handler'             => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle',
+        'free_input' => true,
+        'handler'    => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle',
     ];
 
     /**
@@ -122,7 +122,7 @@ class TagsFieldType extends FieldType
      * helps us out in standardizing the input
      * before modification and storage.
      *
-     * @param  null  $default
+     * @param  null $default
      * @return array
      */
     public function getValidationValue($default = null)
@@ -138,7 +138,7 @@ class TagsFieldType extends FieldType
      * helps us out in standardizing the input
      * before modification and storage.
      *
-     * @param  null  $default
+     * @param  null $default
      * @return array
      */
     public function getInputValue($default = null)
