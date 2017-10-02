@@ -14,7 +14,6 @@ use Illuminate\Support\Collection;
  */
 class TagsFieldTypeOptions
 {
-
     use DispatchesJobs;
 
     /**
@@ -30,22 +29,26 @@ class TagsFieldTypeOptions
             $options = $this->dispatch(new ParseOptions($options));
         }
 
-        if ($options instanceof Collection && $options->isEmpty()) {
-            $options = [];
-        }
+        if ($options instanceof Collection) {
 
-        if ($options instanceof Collection && is_object($first = $options->first())) {
-            if ($first instanceof EntryInterface) {
-                $value = $first->getTitleName();
-            } else {
-                $value = 'id';
+            // If options is the empty collection
+            if ($options->isEmpty()) {
+                $options = [];
             }
 
-            $options = $options->pluck($value);
-        }
+            // If options is the collection of objects
+            if (is_object($first = $options->first())) {
+                $value = $first instanceof EntryInterface
+                    ? $first->getTitleName()
+                    : 'id';
 
-        if ($options instanceof Collection && is_string($options->first())) {
-            $options = $options->all();
+                $options = $options->pluck($value);
+            }
+
+            // If options is the collection of string values
+            if (is_string($first)) {
+                $options = $options->all();
+            }
         }
 
         $fieldType->setOptions((array)$options);
