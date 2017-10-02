@@ -1,6 +1,7 @@
 <?php namespace Anomaly\TagsFieldType;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
+use Anomaly\Streams\Platform\Model\EloquentModel;
 use Anomaly\TagsFieldType\Command\ParseOptions;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Collection;
@@ -14,6 +15,7 @@ use Illuminate\Support\Collection;
  */
 class TagsFieldTypeOptions
 {
+
     use DispatchesJobs;
 
     /**
@@ -25,19 +27,24 @@ class TagsFieldTypeOptions
     {
         $options = array_get($fieldType->getConfig(), 'options', []);
 
+        /**
+         * Parse options from
+         * the config GUI.
+         */
         if (is_string($options)) {
             $options = $this->dispatch(new ParseOptions($options));
         }
 
         if ($options instanceof Collection) {
 
-            // If options is the empty collection
             if ($options->isEmpty()) {
                 $options = [];
             }
 
-            // If options is the collection of objects
-            if (is_object($first = $options->first())) {
+            /**
+             * A collection of Eloquent models.
+             */
+            if ($first = $options->first() instanceof EloquentModel) {
                 $value = $first instanceof EntryInterface
                     ? $first->getTitleName()
                     : 'id';
@@ -45,7 +52,9 @@ class TagsFieldTypeOptions
                 $options = $options->pluck($value);
             }
 
-            // If options is the collection of string values
+            /**
+             * A collection of string values.
+             */
             if (is_string($first)) {
                 $options = $options->all();
             }
