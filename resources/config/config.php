@@ -13,18 +13,6 @@ return [
             'min' => 1,
         ],
     ],
-    'options'       => [
-        'type' => 'anomaly.field_type.textarea',
-    ],
-    'source'        => [
-        'type' => 'anomaly.field_type.url',
-    ],
-    'free_input'    => [
-        'type'   => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => true,
-        ],
-    ],
     'filter'        => [
         'type'   => 'anomaly.field_type.tags',
         'config' => [
