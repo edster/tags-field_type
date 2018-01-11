@@ -5,6 +5,9 @@
     );
 
     fields.forEach(function (field) {
-        new Choices(field);
+        new Choices(field, {
+            removeItemButton: true,
+            duplicateItems: false,
+        });
     });
 })(window, document);
