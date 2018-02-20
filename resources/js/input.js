@@ -8,6 +8,7 @@
         new Choices(field, {
             removeItemButton: true,
             duplicateItems: false,
+            disabled: field.hasAttribute('readonly') || field.hasAttribute('disabled')
         });
     });
 })(window, document);

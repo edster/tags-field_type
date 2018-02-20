@@ -43,6 +43,10 @@ class TagsFieldTypeModifier extends FieldTypeModifier
             return array_filter($value);
         }
 
-        return array_filter((array)unserialize($value));
+        try {
+            return array_filter((array)unserialize($value));
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 }
