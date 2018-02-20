@@ -5,11 +5,11 @@
     );
 
     fields.forEach(function (field) {
-        if (!$(field).attr('readonly')) {
-            new Choices(field, {
-                removeItemButton: true,
-                duplicateItems: false,
-            });
-        }
+        new Choices(field, {
+            removeItemButton: true,
+            duplicateItems: false,
+            disabled: field.hasAttribute('readonly') || field.hasAttribute('disabled')
+        });
     });
+    
 })(window, document);
