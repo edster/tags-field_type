@@ -2,19 +2,17 @@
 {{ asset_add("scripts.js", "anomaly.field_type.tags::js/choices.min.js") }}
 {{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
 
-{% if not (field_type.readonly) %}
-<input
-        class="form-control"
-        name="{{ field_type.input_name }}"
-        value="{{ field_type.value|join(',') }}"
-        placeholder="{{ trans(field_type.placeholder) }}"
-        {{ html_attributes(field_type.attributes) }}
-        {{ field_type.disabled ? 'disabled' }}
-        {{ field_type.readonly ? 'readonly' }}>
+{% if not field_type.readonly and not field_type.disabled %}
+    <input
+            class="form-control"
+            name="{{ field_type.input_name }}"
+            value="{{ field_type.value|join(',') }}"
+            placeholder="{{ trans(field_type.placeholder) }}"
+            {{ html_attributes(field_type.attributes) }}>
 
-<small class="text-muted">
-    {{ trans('anomaly.field_type.tags::input.help') }}
-</small>
+    <small class="text-muted">
+        {{ trans('anomaly.field_type.tags::input.help') }}
+    </small>
 {% else %}
-        {{ field_type.labels()|join('&nbsp;')|raw }}
+    {{ field_type.labels()|join('&nbsp;')|raw }}
 {% endif %}
