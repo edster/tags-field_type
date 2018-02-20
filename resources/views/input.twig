@@ -2,6 +2,7 @@
 {{ asset_add("scripts.js", "anomaly.field_type.tags::js/choices.min.js") }}
 {{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
 
+{% if not (field_type.readonly) %}
 <input
         class="form-control"
         name="{{ field_type.input_name }}"
@@ -14,3 +15,6 @@
 <small class="text-muted">
     {{ trans('anomaly.field_type.tags::input.help') }}
 </small>
+{% else %}
+        {{ field_type.labels()|join('&nbsp;')|raw }}
+{% endif %}
