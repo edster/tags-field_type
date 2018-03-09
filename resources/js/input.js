@@ -12,5 +12,5 @@
             });
         }
     });
-    
+
 })(window, document);
