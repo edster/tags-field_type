@@ -6,10 +6,7 @@
 
     fields.forEach(function (field) {
         if (!field.hasAttribute('readonly') && !field.hasAttribute('disabled')) {
-            new Choices(field, {
-                removeItemButton: true,
-                duplicateItems: false,
-            });
+            new Tagify(field);
         }
     });
 
