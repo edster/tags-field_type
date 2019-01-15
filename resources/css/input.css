@@ -5,7 +5,7 @@
 }
 
 .tags-field_type .tagify {
-  padding: 7.5px;
+  padding: 5px;
 }
 
 .tags-field_type .tagify tag {
@@ -14,7 +14,7 @@
 
 .tags-field_type .tagify tag x {
   line-height: 14px;
-  right: calc(.5em - 3px);
+  right: calc(.5em - 2px);
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -27,6 +27,7 @@
   color: #ffffff;
   font-size: 12px;
   padding: 0.5em 0.7em;
+  padding-right: 20px;
   border-radius: 0.1rem;
   background-color: #09afe5;
   border: 1px solid #089ccc;

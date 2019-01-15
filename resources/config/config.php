@@ -16,13 +16,15 @@ return [
     'filter'        => [
         'type'   => 'anomaly.field_type.tags',
         'config' => [
-            'free_input' => false,
-            'options'    => [
+            'options' => [
                 'FILTER_VALIDATE_EMAIL',
                 'FILTER_VALIDATE_IP',
                 'FILTER_VALIDATE_URL',
             ],
         ],
+    ],
+    'options'       => [
+        'type' => 'anomaly.field_type.textarea',
     ],
     'default_value' => [
         'type' => 'anomaly.field_type.tags',

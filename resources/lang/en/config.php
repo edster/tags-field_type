@@ -13,6 +13,11 @@ return [
         'label'        => 'Filter',
         'instructions' => 'Specify any filters to apply to the tags. You may also enter string matching patterns like <strong>https://*.com</strong>.',
     ],
+    'options'       => [
+        'label'        => 'Options',
+        'instructions' => 'Enter each option on a new line.',
+        'placeholder'  => 'example',
+    ],
     'default_value' => [
         'label'        => 'Default Value',
         'instructions' => 'Enter default values if any.',

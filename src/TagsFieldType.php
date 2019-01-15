@@ -6,9 +6,9 @@ use Anomaly\TagsFieldType\Command\BuildOptions;
 /**
  * Class TagsFieldType
  *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
 class TagsFieldType extends FieldType
 {
@@ -51,13 +51,29 @@ class TagsFieldType extends FieldType
     ];
 
     /**
+     * The option handlers.
+     *
+     * @var array
+     */
+    protected $handlers = [
+        //'years'      => Years::class,
+        //'emails'     => Emails::class,
+        //'states'     => States::class,
+        //'months'     => Months::class,
+        //'layouts'    => Layouts::class,
+        //'options'    => Options::class,
+        //'countries'  => Countries::class,
+        //'timezones'  => Timezones::class,
+        //'currencies' => Currencies::class,
+    ];
+
+    /**
      * The field type config.
      *
      * @var array
      */
     protected $config = [
-        'free_input' => true,
-        'handler'    => 'Anomaly\TagsFieldType\TagsFieldTypeOptions@handle',
+        'handler' => TagsFieldTypeOptions::class,
     ];
 
     /**
@@ -143,7 +159,14 @@ class TagsFieldType extends FieldType
      */
     public function getInputValue($default = null)
     {
-        return array_filter(explode(',', parent::getValidationValue($default)));
+        return array_filter(
+            array_map(
+                function ($tag) {
+                    return $tag['value'];
+                },
+                (array)json_decode(parent::getValidationValue($default), true)
+            )
+        );
     }
 
     /**
@@ -158,5 +181,15 @@ class TagsFieldType extends FieldType
         }
 
         return $required;
+    }
+
+    /**
+     * Get the handlers.
+     *
+     * @return array
+     */
+    public function getHandlers()
+    {
+        return $this->handlers;
     }
 }

@@ -6,7 +6,14 @@
 
     fields.forEach(function (field) {
         if (!field.hasAttribute('readonly') && !field.hasAttribute('disabled')) {
-            new Tagify(field);
+
+            let config = {};
+
+            if (field.dataset.options != '[]') {
+                config.whitelist = JSON.parse(field.dataset.options);
+            }
+
+            new Tagify(field, config);
         }
     });
 

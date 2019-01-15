@@ -8,6 +8,7 @@
             name="{{ field_type.input_name }}"
             value="{{ field_type.value|join(',') }}"
             placeholder="{{ trans(field_type.placeholder) }}"
+            data-options="{{ json_encode(field_type.options) }}"
             {{ html_attributes(field_type.attributes) }}>
 
     <small class="text-muted">

@@ -57,10 +57,6 @@ class FilterValidator
      */
     protected function passes($tag, $filter)
     {
-        if (str_contains($filter, '*')) {
-            return str_contains($tag, $filter);
-        }
-
         switch ($filter) {
 
             case 'FILTER_VALIDATE_EMAIL':
@@ -73,7 +69,7 @@ class FilterValidator
                 return filter_var($tag, FILTER_VALIDATE_IP) !== false;
 
             default:
-                return true;
+                return str_is($filter, $tag);
         }
     }
 }
