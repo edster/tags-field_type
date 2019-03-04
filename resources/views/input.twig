@@ -1,19 +1,36 @@
-{{ asset_add("styles.css", "anomaly.field_type.tags::css/input.css", ["as:yairEO/tagify.css"]) }}
-{{ asset_add("scripts.js", "anomaly.field_type.tags::js/tagify.min.js", ["as:yairEO/tagify.js"]) }}
-{{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
+{{ asset_add("styles.css", "anomaly.field_type.tags::scss/choices.scss", ["as:jshjohnson/Choices.css"]) }}
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/choices.min.js", ["as:jshjohnson/Choices.js"]) }}
 
-{% if not field_type.readonly and not field_type.disabled %}
+{% if field_type.options|length > 0 %}
+    {{ asset_add("scripts.js", "anomaly.field_type.tags::js/tags.js") }}
+    <select multiple
+            data-key="{{ field_type.key }}"
+            name="{{ field_type.input_name }}[]"
+            data-placeholder="{{ trans(field_type.placeholder) }}"
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>
+
+        {% for key, title in field_type.options %}
+            <option {{ key in field_type.ids ? 'selected' }} value="{{ key }}">{{ title }}</option>
+        {% endfor %}
+    </select>
+    <small class="text-muted">
+        {{ trans('anomaly.field_type.tags::input.help') }}
+    </small>
+{% elseif not field_type.readonly and not field_type.disabled %}
+    {{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
     <input
             class="form-control"
             name="{{ field_type.input_name }}"
             value="{{ field_type.value|join(',') }}"
             placeholder="{{ trans(field_type.placeholder) }}"
-            data-options="{{ json_encode(field_type.options) }}"
             {{ html_attributes(field_type.attributes) }}>
 
     <small class="text-muted">
         {{ trans('anomaly.field_type.tags::input.help') }}
     </small>
+
 {% else %}
     {{ field_type.labels()|join('&nbsp;')|raw }}
 {% endif %}
