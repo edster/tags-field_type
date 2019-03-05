@@ -18,6 +18,10 @@ return [
         'instructions' => 'Enter each option on a new line.',
         'placeholder'  => 'example',
     ],
+    'enforce_options'       => [
+        'label'        => 'Enforce Options',
+        'instructions' => 'Enable to allow <em>only</em> the above options as input.',
+    ],
     'default_value' => [
         'label'        => 'Default Value',
         'instructions' => 'Enter default values if any.',

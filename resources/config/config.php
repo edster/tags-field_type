@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'min'           => [
+    'min'             => [
         'type'   => 'anomaly.field_type.integer',
         'config' => [
             'min' => 1,
         ],
     ],
-    'max'           => [
+    'max'             => [
         'type'   => 'anomaly.field_type.integer',
         'config' => [
             'min' => 1,
         ],
     ],
-    'filter'        => [
+    'filter'          => [
         'type'   => 'anomaly.field_type.tags',
         'config' => [
             'options' => [
@@ -23,10 +23,13 @@ return [
             ],
         ],
     ],
-    'options'       => [
+    'options'         => [
         'type' => 'anomaly.field_type.textarea',
     ],
-    'default_value' => [
+    'enforce_options' => [
+        'type' => 'anomaly.field_type.boolean',
+    ],
+    'default_value'   => [
         'type' => 'anomaly.field_type.tags',
     ],
 ];
