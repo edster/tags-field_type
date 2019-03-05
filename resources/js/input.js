@@ -13,7 +13,15 @@
                 config.whitelist = JSON.parse(field.dataset.options);
             }
 
-            new Tagify(field, config);
+            let tags = new Tagify(field, config);
+
+            tags.DOM.input.addEventListener('paste', function(event) {
+
+                event.preventDefault();
+
+                document.execCommand('insertHTML', false, event.clipboardData.getData('text/plain'));
+            });
+
         }
     });
 
