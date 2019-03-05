@@ -8,7 +8,10 @@
         if (!field.hasAttribute('readonly') && !field.hasAttribute('disabled')) {
 
             let config = {
-                enforceWhitelist: (field.dataset.enforce_options == 'true')
+                enforceWhitelist: (field.dataset.enforce_options == 'true'),
+                dropdown: {
+                    enabled: 0
+                }
             };
 
             if (field.dataset.options != '[]') {
