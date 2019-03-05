@@ -7,17 +7,17 @@
     fields.forEach(function (field) {
         if (!field.hasAttribute('readonly') && !field.hasAttribute('disabled')) {
 
-            let config = {};
+            let config = {
+                enforceWhitelist: (field.dataset.enforce_options == 'true')
+            };
 
             if (field.dataset.options != '[]') {
                 config.whitelist = JSON.parse(field.dataset.options);
             }
 
-            config.enforceWhitelist = (field.dataset.enforce_options == 'true');
-
             let tags = new Tagify(field, config);
 
-            tags.DOM.input.addEventListener('paste', function(event) {
+            tags.DOM.input.addEventListener('paste', function (event) {
 
                 event.preventDefault();
 
